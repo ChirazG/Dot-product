@@ -1,0 +1,48 @@
+PROCEDURE dot_produc(V1,V2:ARRAY_OF FLOAT[3]): FLOAT
+VAR
+    i: INTEGER;
+    ps: FLOAT := 0;
+BEGIN
+WHILE (V1.length = V2.length) DO
+    FOR i FROM 0 TO (V1.length-1) STEP 1  DO
+    ps := ps + V1[i]*V2[i];
+END_WHILE
+
+    RETURN ps;
+
+END
+
+
+ALGORITHM Orthogomal
+VAR
+    V1: ARRAY_OF FLOAT[3];
+    V1: ARRAY_OF FLOAT[3];
+    n: INTEGER;
+    ps: FLOAT :=0;
+BEGIN
+
+REPEAT
+    Write("Write the number of pairs of vectors");
+    Read(n);
+UNTIL (n>0);
+
+FOR i FROM 0 TO n STEP 1  DO
+    FOR j FROM 0 TO (V1.length-1) STEP 1  DO
+         Write ("Write V1["j"] of the first vector")
+         Read (V1[j]);
+    END_FOR
+    FOR j FROM 0 TO (V2.length-1) STEP 1  DO
+         Write ("Write V2["j"] of the first vector")
+         Read (V2[j]);
+    END_FOR
+
+    ps:= dot_product(V1,V2);
+
+    IF (ps = 0) THEN
+        Write("Orthogonal");
+     ELSE
+        Write ("Not orthogonal");
+    END_IF
+    
+End_for    
+END
